@@ -1,4 +1,4 @@
-import User from '../models/Users';
+const User = require('../models/User');
 
 module.exports = {
   async store(req, res) {
@@ -10,7 +10,7 @@ module.exports = {
   },
 
   async list(req, res) {
-    const user = await User.find().populate();
-    return res.send(user);
+    const users = await User.findAll();
+    return res.json(users);
   },
 };
