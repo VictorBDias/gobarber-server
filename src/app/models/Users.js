@@ -1,13 +1,13 @@
-import { Model, DataType } from 'sequelize';
+const { Model, DataTypes } = require('sequelize');
 
-class Users extends Model {
+class User extends Model {
   static init(sequelize) {
     super.init(
       {
-        name: DataType.STRING,
-        email: DataType.STRING,
-        password_hash: DataType.STRING,
-        provider: DataType.BOOLEAN,
+        name: DataTypes.STRING,
+        email: DataTypes.STRING,
+        password_hash: DataTypes.STRING,
+        provider: DataTypes.BOOLEAN,
       },
       {
         sequelize,
@@ -15,4 +15,5 @@ class Users extends Model {
     );
   }
 }
-export default Users;
+
+module.exports = User;

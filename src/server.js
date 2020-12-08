@@ -1,6 +1,9 @@
 /* eslint-disable no-console */
 import express from 'express';
+
 import routes from './routes';
+
+require('./database');
 
 const app = express();
 
