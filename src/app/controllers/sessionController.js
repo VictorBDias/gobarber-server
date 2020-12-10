@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const Yup = require('yup');
 const User = require('../models/User');
 
 const authConfig = require('../../config/auth.json');
@@ -8,28 +9,15 @@ function generateToken(params = {}) {
 }
 
 module.exports = {
-  // async register(req, res) {
-  //   const { name, email, provider, password } = req.body;
-  //   try {
-  //     if (await User.findOne({ where: { email } }))
-  //       return res.status(400).send({ error: 'email já cadastrado' });
-
-  //     const user = await User.create(req.body);
-
-  //     user.password_hash = undefined;
-
-  //     return res.json({
-  //       name,
-  //       email,
-  //       provider,
-  //       token: generateToken({ id: user.id }),
-  //     });
-  //   } catch (error) {
-  //     return res.status(400).send({ error: 'Falha no registro' });
-  //   }
-  // },
-
   async authenticate(req, res) {
+    const schema = Yup.object().shape({
+      email: Yup.string().required().email(),
+      password: Yup.string().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).send({ error: 'failure to validate' });
+    }
     const { email, password } = req.body;
 
     const user = await User.findOne({ where: { email } });

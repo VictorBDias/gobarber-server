@@ -17,7 +17,8 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
-    "uuidv4": "^6.2.4"
+    "uuidv4": "^6.2.4",
+    "yup": "^0.32.6"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
