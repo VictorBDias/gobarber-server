@@ -53,7 +53,7 @@ module.exports = {
     }
     const { email, oldPassword } = req.body;
 
-    const user = await User.findByPk(req.userId);
+    const user = await User.findByPk(req.body.id);
 
     try {
       if (email && email !== user.email) {
