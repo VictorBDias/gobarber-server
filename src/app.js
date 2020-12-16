@@ -1,7 +1,8 @@
-const express = require('express');
-const routes = require('./routes');
+import path from 'path';
+import express from 'express';
+import routes from './routes';
 
-require('./database');
+import './database';
 
 class App {
   constructor() {
@@ -12,7 +13,12 @@ class App {
   }
 
   middlewares() {
-    this.server.use(routes);
+    this.server.use(express.json());
+    // quando a rota files for utilizada o express resolvera no caminho especificado
+    this.server.use(
+      '/files',
+      express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')),
+    );
   }
 
   routes() {
@@ -20,4 +26,4 @@ class App {
   }
 }
 
-module.exports = new App().server;
+export default new App().server;

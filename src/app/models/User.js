@@ -29,5 +29,10 @@ class User extends Model {
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
+
+  // model de usuário pertence ao model de file, id do arquivo sera armazenado dentro do model de usuário
+  static associate(models) {
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
+  }
 }
 module.exports = User;
