@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-// import path from 'path';
 
 class File extends Model {
   static init(sequelize) {
