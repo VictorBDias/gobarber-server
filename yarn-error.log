@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add sequelize-types
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add mongoose
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+  /home/victor/.npm-global/bin:/home/victor/.yarn/bin:/home/victor/.zinit/polaris/sbin:/home/victor/.zinit/polaris/bin:/home/victor/.npm-global/bin:/home/victor/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/media/victor/linux-filesAndroid/Sdk/emulator:/media/victor/linux-filesAndroid/Sdk/tools:/media/victor/linux-filesAndroid/Sdk/tools/bin:/media/victor/linux-filesAndroid/Sdk/platform-tools:/home/victor/Documents/android-studio/bin:/home/victor/Documents/mongodb/bin:/media/victor/linux-filesAndroid/Sdk/emulator:/media/victor/linux-filesAndroid/Sdk/tools:/media/victor/linux-filesAndroid/Sdk/tools/bin:/media/victor/linux-filesAndroid/Sdk/platform-tools:/home/victor/Documents/android-studio/bin:/home/victor/Documents/mongodb/bin
 
 Yarn version: 
   1.22.5
@@ -14,17 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/sequelize-types: Not found
-      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/usr/share/yarn/lib/cli.js:140749:22)
-      at Request.emit (events.js:314:20)
-      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141721:10)
-      at Request.emit (events.js:314:20)
-      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141643:12)
-      at Object.onceWrapper (events.js:420:28)
-      at IncomingMessage.emit (events.js:326:22)
-      at endReadableNT (_stream_readable.js:1241:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: EACCES: permission denied, mkdir '/home/victor/Documents/gobarber/gobarber-server/node_modules/umzug/node_modules'
 
 npm manifest: 
   {
@@ -47,6 +37,7 @@ npm manifest:
       "pg": "^8.5.1",
       "pg-hstore": "^2.3.3",
       "sequelize": "^6.3.5",
+      "types": "^0.1.1",
       "uuidv4": "^6.2.4",
       "yup": "^0.32.6"
     },
@@ -3776,6 +3767,11 @@ Lockfile:
     version "0.0.6"
     resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
     integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+  
+  types@^0.1.1:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/types/-/types-0.1.1.tgz#860c6859d11366293f835d8c95aebcf95029838e"
+    integrity sha1-hgxoWdETZik/g12Mla68+VApg44=
   
   typescript@^4.0.3:
     version "4.0.3"
